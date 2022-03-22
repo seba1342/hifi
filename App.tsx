@@ -11,7 +11,13 @@ export default function App() {
     <NavigationContainer>
       <Stack.Navigator initialRouteName="VerticalSurvey">
         <Stack.Screen name="Home" component={HomeScreen} />
-        <Stack.Screen name="VerticalSurvey" component={VerticalSurveyScreen} />
+        <Stack.Screen
+          name="VerticalSurvey"
+          component={VerticalSurveyScreen}
+          options={{
+            headerShown: false,
+          }}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );
