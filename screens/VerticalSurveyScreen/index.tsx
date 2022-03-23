@@ -71,7 +71,6 @@ export default function VerticalSurveyScreen() {
   }
 
   function onMomentumScrollEnd(currentPageIndex: number) {
-    console.log(pageRefs.current);
     pageRefs.current?.[currentPageIndex].onLayout();
   }
 
