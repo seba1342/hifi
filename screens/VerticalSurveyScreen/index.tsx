@@ -2,7 +2,6 @@ import * as React from "react";
 import {
   ScrollView,
   StatusBar,
-  StyleSheet,
   useWindowDimensions,
   NativeSyntheticEvent,
   NativeScrollEvent,
@@ -11,7 +10,6 @@ import { useHeaderHeight } from "@react-navigation/elements";
 import * as COLORS from "constants/colors";
 import AnimatedGradient from "components/AnimatedGradient";
 import Page from "./components/Page";
-import { LinearGradient } from "expo-linear-gradient";
 
 const colors = [
   COLORS.brandOrange,
@@ -37,8 +35,7 @@ const questions = [
     options: ["All the time", "Mostly", "Sometimes", "Not often", "Never"],
   },
   {
-    question:
-      "How easy is it for you to cover your basic living costs (rent or mortgage, bills, food, transport, etc.)?",
+    question: "How easy is it for you to cover your basic living costs?",
     options: [
       "Piss easy",
       "Pretty easy",
@@ -113,7 +110,3 @@ export default function VerticalSurveyScreen() {
     </>
   );
 }
-
-const styles = StyleSheet.create({
-  // root: { flex: 1 },
-});

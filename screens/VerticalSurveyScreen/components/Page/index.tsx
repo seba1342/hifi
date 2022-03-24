@@ -168,7 +168,7 @@ export default React.forwardRef<Handle, Props>(function Page(
           <View>
             <Animated.View style={buttonStyles}>
               <Body style={[styles.overlineText, styles.coinDragHint]}>
-                Drag to answer
+                Drag the coin on top of your answer
               </Body>
             </Animated.View>
           </View>
@@ -197,6 +197,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   coinDragHint: {
+    fontSize: 12,
     marginTop: SPACING / 2,
   },
   optionContainer: {
