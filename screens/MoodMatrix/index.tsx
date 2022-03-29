@@ -1,5 +1,11 @@
 import * as React from "react";
-import { Image, StyleSheet, useWindowDimensions, View } from "react-native";
+import {
+  Image,
+  LayoutChangeEvent,
+  StyleSheet,
+  useWindowDimensions,
+  View,
+} from "react-native";
 import { PanGestureHandler } from "react-native-gesture-handler";
 import Animated, {
   interpolate,
@@ -9,6 +15,7 @@ import Animated, {
   withTiming,
   runOnJS,
 } from "react-native-reanimated";
+import { clamp } from "react-native-redash";
 import Title from "components/text/Title";
 import { SPACING } from "constants/styles";
 import { COLOR_MATRIX } from "./colorMatrix";
@@ -21,6 +28,7 @@ export default function MoodMatrix() {
   const x = useSharedValue(0);
   const y = useSharedValue(0);
   const isGestureActive = useSharedValue(0);
+  const imageLayout = useSharedValue({ height: 0, width: 0 });
 
   const backgroundColor = useSharedValue(COLOR_MATRIX[3][3]);
 
@@ -37,8 +45,16 @@ export default function MoodMatrix() {
       runOnJS(Haptics.selectionAsync)();
     },
     onActive: ({ translationX, translationY, absoluteX, absoluteY }, ctx) => {
-      x.value = ctx.startX + translationX;
-      y.value = ctx.startY + translationY;
+      x.value = clamp(
+        ctx.startX + translationX,
+        -width / 2 + 60,
+        width / 2 - 60
+      );
+      y.value = clamp(
+        ctx.startY + translationY,
+        -imageLayout.value.height / 2 + 60,
+        imageLayout.value.height / 2 - 60
+      );
 
       const colorX = Math.floor(absoluteX / colorWidth);
       const colorY = Math.floor(absoluteY / colorHeight);
@@ -76,12 +92,19 @@ export default function MoodMatrix() {
     backgroundColor: backgroundColor.value,
   }));
 
+  function onImageLayout(event: LayoutChangeEvent) {
+    const { height, width } = event.nativeEvent.layout;
+
+    imageLayout.value = { height, width };
+  }
+
   return (
     <View style={styles.root}>
       <Animated.View style={[styles.background, aBackgroundStyle]} />
       <Title style={styles.text}>How do you feel about money?</Title>
       <View style={styles.matrix}>
         <Image
+          onLayout={onImageLayout}
           resizeMode="contain"
           source={require("./assets/matrix.png")}
           style={styles.matrixImage}

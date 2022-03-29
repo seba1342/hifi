@@ -1,6 +1,5 @@
 import * as React from "react";
 import {
-  ActivityIndicator,
   Image,
   LayoutChangeEvent,
   StyleSheet,
@@ -33,8 +32,6 @@ export default function MoodMatrixGradient() {
   const imageLayout = useSharedValue({ height: 0, width: 0 });
 
   const [isBackgroundLoading, setIsBackgroundLoading] = useState(true);
-
-  console.log("rendered", isBackgroundLoading);
 
   const { height, width } = useWindowDimensions();
 
