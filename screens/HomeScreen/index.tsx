@@ -8,6 +8,11 @@ import { SPACING } from "constants/styles";
 const SCREENS = [
   { emoji: "↕️", routeName: "VerticalSurvey", title: "Vertical Survey" },
   { emoji: "🎨", routeName: "MoodMatrix", title: "Mood Matrix - No gradient" },
+  {
+    emoji: "🖼️",
+    routeName: "MoodMatrixGradient",
+    title: "Mood Matrix - Gradient",
+  },
 ];
 
 export default function HomeScreen({ navigation }) {
