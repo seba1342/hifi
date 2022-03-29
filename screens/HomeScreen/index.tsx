@@ -5,16 +5,24 @@ import { List, ListItem } from "./components/List";
 import Title from "components/text/Title";
 import { SPACING } from "constants/styles";
 
+const SCREENS = [
+  { emoji: "↕️", routeName: "VerticalSurvey", title: "Vertical Survey" },
+  { emoji: "🎨", routeName: "MoodMatrix", title: "Mood Matrix - No gradient" },
+];
+
 export default function HomeScreen({ navigation }) {
   return (
     <SafeAreaView style={styles.root}>
       <Title style={styles.title}>Hi-Fi exploration</Title>
       <List>
-        <ListItem
-          emoji="↕️"
-          onPress={() => navigation.navigate("VerticalSurvey")}
-          title="Vertical Survey"
-        />
+        {SCREENS.map((screen) => (
+          <ListItem
+            emoji={screen.emoji}
+            key={screen.routeName}
+            onPress={() => navigation.navigate(screen.routeName)}
+            title={screen.title}
+          />
+        ))}
       </List>
     </SafeAreaView>
   );
