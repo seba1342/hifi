@@ -1,5 +1,6 @@
 import * as React from "react";
 import {
+  ActivityIndicator,
   Image,
   LayoutChangeEvent,
   StyleSheet,
@@ -22,12 +23,18 @@ import Title from "components/text/Title";
 import { SPACING } from "constants/styles";
 import * as Haptics from "expo-haptics";
 
+const { useState } = React;
+
 export default function MoodMatrixGradient() {
   const x = useSharedValue(0);
   const y = useSharedValue(0);
   const isGestureActive = useSharedValue(0);
   const backgroundLayout = useSharedValue({ height: 0, width: 0 });
   const imageLayout = useSharedValue({ height: 0, width: 0 });
+
+  const [isBackgroundLoading, setIsBackgroundLoading] = useState(true);
+
+  console.log("rendered", isBackgroundLoading);
 
   const { height, width } = useWindowDimensions();
 
@@ -140,7 +147,6 @@ const styles = StyleSheet.create({
   root: {
     flex: 1,
     padding: SPACING,
-    overflow: "hidden",
   },
   background: {
     ...StyleSheet.absoluteFillObject,
