@@ -14,7 +14,6 @@ import Animated, {
   useSharedValue,
   withTiming,
   runOnJS,
-  withDelay,
   Easing,
 } from "react-native-reanimated";
 import { clamp } from "react-native-redash";
@@ -71,32 +70,26 @@ export default function MoodMatrixGradient() {
   const aGradientStyle = useAnimatedStyle(() => ({
     transform: [
       {
-        translateX: withDelay(
-          100,
-          withTiming(
-            interpolate(
-              x.value,
-              [-width / 2 + 60, width / 2 - 60],
-              [0, -backgroundLayout.value.width + width]
-            ),
-            { easing: Easing.ease }
-          )
+        translateX: withTiming(
+          interpolate(
+            x.value,
+            [-width / 2 + 60, width / 2 - 60],
+            [0, -backgroundLayout.value.width + width]
+          ),
+          { easing: Easing.ease }
         ),
       },
       {
-        translateY: withDelay(
-          100,
-          withTiming(
-            interpolate(
-              y.value,
-              [
-                -imageLayout.value.height / 2 + 60,
-                imageLayout.value.height / 2 - 60,
-              ],
-              [0, -backgroundLayout.value.height + height + 60]
-            ),
-            { easing: Easing.ease }
-          )
+        translateY: withTiming(
+          interpolate(
+            y.value,
+            [
+              -imageLayout.value.height / 2 + 60,
+              imageLayout.value.height / 2 - 60,
+            ],
+            [0, -backgroundLayout.value.height + height + 60]
+          ),
+          { easing: Easing.ease }
         ),
       },
     ],
