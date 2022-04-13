@@ -21,16 +21,12 @@ import Title from "components/text/Title";
 import { SPACING } from "constants/styles";
 import * as Haptics from "expo-haptics";
 
-const { useState } = React;
-
 export default function MoodMatrixGradient() {
   const x = useSharedValue(0);
   const y = useSharedValue(0);
   const isGestureActive = useSharedValue(0);
   const backgroundLayout = useSharedValue({ height: 0, width: 0 });
   const imageLayout = useSharedValue({ height: 0, width: 0 });
-
-  const [isBackgroundLoading, setIsBackgroundLoading] = useState(true);
 
   const { height, width } = useWindowDimensions();
 

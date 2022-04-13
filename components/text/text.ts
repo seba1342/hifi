@@ -5,4 +5,5 @@ export const textBaseStyle = {
   // Ensures both Android and iOS use the intended font file rather than
   // auto-selecting based on fontWeight (happens in react-navigation headers)
   fontWeight: undefined,
+  fontFamily: "CircularStdBook",
 } as const;

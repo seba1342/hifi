@@ -13,6 +13,11 @@ const SCREENS = [
     routeName: "MoodMatrixGradient",
     title: "Mood Matrix - Gradient",
   },
+  {
+    emoji: "🎧",
+    routeName: "HifiIntro",
+    title: "Hi–Fi Intro",
+  },
 ];
 
 export default function HomeScreen({ navigation }) {
