@@ -24,6 +24,7 @@ export default function Background() {
         resizeMode="cover"
         source={require("./assets/bg.mp4")}
         posterSource={require("./assets/bg.jpg")}
+        posterStyle={{ resizeMode: "cover", height: "100%", width: "100%" }}
         usePoster
         shouldPlay
         isLooping
