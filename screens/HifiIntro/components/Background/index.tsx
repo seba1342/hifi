@@ -23,6 +23,8 @@ export default function Background() {
       <Video
         resizeMode="cover"
         source={require("./assets/bg.mp4")}
+        posterSource={require("./assets/bg.jpg")}
+        usePoster
         shouldPlay
         isLooping
         style={[
