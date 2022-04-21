@@ -6,6 +6,7 @@ export const brandYellow = "#FFF06B"; // Yellow Zest
 export const brandBlue = "#4E6280"; // Up Blue
 export const brandPink = "#FF8BB5"; // Up Pink
 export const brandGreen = "#305555"; // Up Green
+export const brandTeal = "#25BBB8";
 
 export const lightGrey = "#F2F2F3";
 

@@ -11,6 +11,8 @@ import VerticalSurveyScreen from "screens/VerticalSurveyScreen";
 import HifiIntro from "screens/HifiIntro";
 // components
 import BackButton from "components/BackButton";
+import SoundWave from "screens/SoundWave";
+import { brandExtraDarkBlue, brandOrange } from "constants/colors";
 
 const Stack = createNativeStackNavigator();
 
@@ -70,6 +72,19 @@ export default function App() {
               headerTitle: "",
               headerShadowVisible: false,
               headerBackTitle: "",
+              headerStyle: {
+                backgroundColor: "transparent",
+              },
+            }}
+          />
+          <Stack.Screen
+            name="SoundWave"
+            component={SoundWave}
+            options={{
+              headerTitle: "",
+              headerShadowVisible: false,
+              headerBackTitle: "Close",
+              headerTintColor: brandExtraDarkBlue,
               headerStyle: {
                 backgroundColor: "transparent",
               },

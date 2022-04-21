@@ -4,9 +4,7 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import Animated, {
   Easing,
   FadeInDown,
-  FadeOut,
   FadeOutUp,
-  Layout,
 } from "react-native-reanimated";
 import { brandOrange, lightGreyText } from "constants/colors";
 import { SPACING } from "constants/styles";

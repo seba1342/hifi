@@ -18,6 +18,11 @@ const SCREENS = [
     routeName: "HifiIntro",
     title: "Hi–Fi Intro",
   },
+  {
+    emoji: "🌊",
+    routeName: "SoundWave",
+    title: "Sound wave",
+  },
 ];
 
 export default function HomeScreen({ navigation }) {

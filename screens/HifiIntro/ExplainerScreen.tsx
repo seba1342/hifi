@@ -86,7 +86,6 @@ export default function ExplainerScreen({
 
   useInterval(
     () => {
-      console.log("tick, tock");
       ref.current?.scrollToOffset({
         offset: scrollY.value + itemHeight,
         animated: true,
