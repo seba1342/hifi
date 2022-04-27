@@ -19,6 +19,11 @@ const SCREENS = [
     title: "Mood Matrix - Background Interaction",
   },
   {
+    emoji: "🚛",
+    routeName: "Trails",
+    title: "Trails",
+  },
+  {
     emoji: "🎧",
     routeName: "HifiIntro",
     title: "Hi–Fi Intro",
