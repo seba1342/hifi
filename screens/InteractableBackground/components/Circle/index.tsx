@@ -13,7 +13,7 @@ type Props = Readonly<{
   handlePosition: SharedValue<Vector>;
 }>;
 
-const { width, height } = Dimensions.get("window");
+const { height } = Dimensions.get("window");
 
 export default function Circle({ handlePosition }: Props) {
   const ref = React.useRef<React.ElementRef<typeof View> | null>(null);
@@ -33,8 +33,6 @@ export default function Circle({ handlePosition }: Props) {
   }
 
   const aStyle = useAnimatedStyle(() => {
-    console.log(circle.value.x, circle.value.y, handlePosition.value);
-
     const minMax = (num1: number, num2: number) => [
       Math.min(num1, num2),
       Math.max(num1, num2),
