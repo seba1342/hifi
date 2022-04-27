@@ -50,7 +50,7 @@ export default function Circle({ handlePosition }: Props) {
       Math.pow(xMax - xMin, 2) + Math.pow(yMax - yMin, 2)
     );
 
-    const scale = interpolate(distance, [0, height], [0.2, 1]);
+    const scale = interpolate(distance, [0, height], [0.1, 0.9]);
 
     return {
       transform: [{ scale }],

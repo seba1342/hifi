@@ -19,7 +19,7 @@ import * as Haptics from "expo-haptics";
 import { brandExtraDarkBlue } from "constants/colors";
 import Circle from "./components/Circle";
 
-const CIRCLES = new Array(100).fill(null);
+const CIRCLES = new Array(84).fill(null);
 
 export default function InteractableBackground() {
   const x = useSharedValue(0);
@@ -88,8 +88,6 @@ const styles = StyleSheet.create({
     backgroundColor: "white",
   },
   matrix: {
-    borderColor: brandExtraDarkBlue,
-    borderWidth: 1,
     justifyContent: "center",
     alignItems: "center",
     height: "100%",
