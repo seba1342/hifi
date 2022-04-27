@@ -11,14 +11,6 @@ import * as COLORS from "constants/colors";
 import AnimatedGradient from "components/AnimatedGradient";
 import Page from "./components/Page";
 
-const colors = [
-  COLORS.brandOrange,
-  COLORS.brandBlue,
-  COLORS.brandYellow,
-  COLORS.brandPink,
-  COLORS.brandGreen,
-];
-
 const questions = [
   {
     question: "How do you feel about how you manage your day to day finances?",

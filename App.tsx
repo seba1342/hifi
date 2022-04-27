@@ -9,6 +9,7 @@ import MoodMatrix from "screens/MoodMatrix";
 import MoodMatrixGradient from "screens/MoodMatrixGradient";
 import VerticalSurveyScreen from "screens/VerticalSurveyScreen";
 import HifiIntro from "screens/HifiIntro";
+import InteractableBackground from "screens/InteractableBackground";
 // components
 import BackButton from "components/BackButton";
 import SoundWave from "screens/SoundWave";
@@ -62,6 +63,19 @@ export default function App() {
               headerLeft: BackButton,
               headerTitle: "",
               headerStyle: { backgroundColor: "transparent" },
+            }}
+          />
+          <Stack.Screen
+            name="InteractableBackground"
+            component={InteractableBackground}
+            options={{
+              headerTitle: "",
+              headerShadowVisible: false,
+              headerBackTitle: "Close",
+              headerTintColor: brandExtraDarkBlue,
+              headerStyle: {
+                backgroundColor: "transparent",
+              },
             }}
           />
           <Stack.Screen
