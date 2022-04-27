@@ -13,7 +13,8 @@ import InteractableBackground from "screens/InteractableBackground";
 // components
 import BackButton from "components/BackButton";
 import SoundWave from "screens/SoundWave";
-import { brandExtraDarkBlue, brandOrange } from "constants/colors";
+import { brandExtraDarkBlue } from "constants/colors";
+import Trails from "screens/Trails";
 
 const Stack = createNativeStackNavigator();
 
@@ -68,6 +69,19 @@ export default function App() {
           <Stack.Screen
             name="InteractableBackground"
             component={InteractableBackground}
+            options={{
+              headerTitle: "",
+              headerShadowVisible: false,
+              headerBackTitle: "Close",
+              headerTintColor: brandExtraDarkBlue,
+              headerStyle: {
+                backgroundColor: "transparent",
+              },
+            }}
+          />
+          <Stack.Screen
+            name="Trails"
+            component={Trails}
             options={{
               headerTitle: "",
               headerShadowVisible: false,
