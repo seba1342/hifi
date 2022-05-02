@@ -28,7 +28,7 @@ import { SPACING } from "constants/styles";
 import * as Haptics from "expo-haptics";
 import { brandOrange } from "constants/colors";
 
-const VELOCITY_FACTOR = 1 / 2000;
+const VELOCITY_FACTOR = 1 / 3000;
 
 const AnimatedVideo = Animated.createAnimatedComponent(Video);
 const AnimatedPath = Animated.createAnimatedComponent(Path);
